@@ -1,0 +1,17 @@
+dex:
+  enabled: false
+
+notifications:
+  enabled: false
+
+applicationSet:
+  enabled: true
+
+redis:
+  enabled: true
+
+controller:
+  replicas: 1
+
+server:
+  replicas: 1
