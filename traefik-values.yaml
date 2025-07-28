@@ -1,3 +1,6 @@
+api:
+  dashboard: true
+
 deployment:
   replicas: 1
   podAnnotations: {}
