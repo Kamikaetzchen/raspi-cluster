@@ -40,6 +40,14 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="\
 
 > You may also disable `coredns`, `cloud-controller`, or `network-policy` if your use case allows it. See the K3s docs for full flag reference.
 
+#### 🔐 Get the K3S_TOKEN
+
+```bash
+cat /var/lib/rancher/k3s/server/node-token
+```
+
+Then copy the token and use it in the agent install command
+
 ### Agent Nodes (raspi02–05):
 
 ```bash
