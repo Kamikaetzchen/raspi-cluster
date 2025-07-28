@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: buffalo-site
+  labels:
+    app: buffalo-site
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: buffalo-site
+  template:
+    metadata:
+      labels:
+        app: buffalo-site
+    spec:
+      containers:
+      - name: buffalo-site
+        image: nginx:alpine
+        volumeMounts:
+        - name: buffalo-content
+          mountPath: /usr/share/nginx/html
+        ports:
+        - containerPort: 80
+      volumes:
+      - name: buffalo-content
+        nfs:
+          server: 192.168.178.102
+          path: /mnt/s3/buffalo
