@@ -1,3 +1,4 @@
+# k8s/argocd/app-of-apps.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
