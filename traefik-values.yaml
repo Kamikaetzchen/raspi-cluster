@@ -1,0 +1,33 @@
+deployment:
+  replicas: 1
+  podAnnotations: {}
+  nodeSelector:
+    ingress: "true"
+
+ports:
+  web:
+    port: 80
+    nodePort: 30080
+    expose: true
+    exposedPort: 80
+    protocol: TCP
+  websecure:
+    port: 443
+    nodePort: 30443
+    expose: true
+    exposedPort: 443
+    protocol: TCP
+
+ingressRoute:
+  dashboard:
+    enabled: true
+  # Later secure this with auth or TLS
+
+service:
+  type: NodePort
+
+logs:
+  general:
+    level: WARN
+  access:
+    enabled: true

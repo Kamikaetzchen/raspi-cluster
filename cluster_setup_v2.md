@@ -163,6 +163,11 @@ Verify:
 helm version
 ```
 
+so helm knows where the config is:
+```bash
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+```
+
 ---
 
 ## 🚀 Optional: ArgoCD for GitOps
