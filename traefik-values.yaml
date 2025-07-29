@@ -11,14 +11,12 @@ nodeSelector:
 ports:
   web:
     port: 80
-    nodePort: 30080
     expose:
       default: true
     exposedPort: 80
     protocol: TCP
   websecure:
     port: 443
-    nodePort: 30443
     expose:
       default: true
     exposedPort: 443
@@ -34,10 +32,9 @@ tls:
       defaultCertificate:
         secretName: traefik-cert
 
-hostNetwork: true
-
 service:
-  enabled: false
+  enabled: true
+  type: LoadBalancer
 
 logs:
   general:
