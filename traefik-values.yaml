@@ -34,8 +34,10 @@ tls:
       defaultCertificate:
         secretName: traefik-cert
 
+hostNetwork: true
+
 service:
-  type: NodePort
+  enabled: false
 
 logs:
   general:
