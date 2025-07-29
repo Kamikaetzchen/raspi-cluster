@@ -4,11 +4,12 @@ api:
 deployment:
   replicas: 1
   podAnnotations: {}
-  nodeSelector:
-    ingress: "true"
 
 hostNetwork: true
 
+nodeSelector:
+  ingress: "true"
+  
 ports:
   web:
     port: 80
