@@ -27,7 +27,12 @@ ports:
 ingressRoute:
   dashboard:
     enabled: true
-  # Later secure this with auth or TLS
+
+tls:
+  stores:
+    default:
+      defaultCertificate:
+        secretName: traefik-cert
 
 service:
   type: NodePort
