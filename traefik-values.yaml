@@ -7,17 +7,17 @@ deployment:
   nodeSelector:
     ingress: "true"
 
+hostNetwork: true
+
 ports:
   web:
     port: 80
-    nodePort: 30080
     expose:
       default: true
     exposedPort: 80
     protocol: TCP
   websecure:
     port: 443
-    nodePort: 30443
     expose:
       default: true
     exposedPort: 443
@@ -29,7 +29,7 @@ ingressRoute:
   # Later secure this with auth or TLS
 
 service:
-  type: NodePort
+  type: ClusterIP
 
 logs:
   general:
