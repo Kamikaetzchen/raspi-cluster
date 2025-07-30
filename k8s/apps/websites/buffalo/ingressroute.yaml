@@ -8,7 +8,7 @@ spec:
     - web
     - websecure
   routes:
-    - match: Host(`buffalo.mydomain.eu`)
+    - match: Host(`buffalo.kamikatze.eu`)
       kind: Rule
       middlewares:
       - name: buffalo-https-redirect
