@@ -1,0 +1,28 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: buffalo-site
+  namespace: websites
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`buffalo.mydomain.eu`)
+      kind: Rule
+      middlewares:
+      - name: buffalo-https-redirect
+      services:
+        - name: buffalo-site
+          port: 80
+  tls: {}
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: buffalo-https-redirect
+  namespace: websites
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: true
