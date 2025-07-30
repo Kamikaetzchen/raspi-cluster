@@ -15,3 +15,6 @@ metadata:
 spec:
   ipAddressPools:
     - default-address-pool
+  nodeSelectors:
+  - matchLabels:
+      kubernetes.io/hostname: raspi03
