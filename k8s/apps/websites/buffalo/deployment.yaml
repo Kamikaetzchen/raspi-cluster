@@ -27,4 +27,4 @@ spec:
       - name: buffalo-content
         nfs:
           server: 192.168.178.102
-          path: /mnt/s3/buffalo
+          path: /mnt/nfs/buffalo
