@@ -18,3 +18,5 @@ spec:
   nodeSelectors:
   - matchLabels:
       kubernetes.io/hostname: raspi03
+  interfaces:
+    - eth0
